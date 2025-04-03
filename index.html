@@ -10,7 +10,7 @@
             font-family: 'Arial', sans-serif;
             text-align: center;
             margin: 0;
-            padding: 20px;
+          
             background-image: radial-gradient(at 50.8042864113279% 97.15369660885034%, hsla(218.7640449438202, 71.2%, 50.98039215686274%, 1) 0%, hsla(218.7640449438202, 71.2%, 50.98039215686274%, 0) 100%), radial-gradient(at 34.29194778719072% 83.76767611730027%, hsla(211.27659574468083, 74.01574803149606%, 49.80392156862745%, 1) 0%, hsla(211.27659574468083, 74.01574803149606%, 49.80392156862745%, 0) 100%), radial-gradient(at 93.53546606213474% 94.30892732021933%, hsla(197.51072961373387, 100%, 45.68627450980392%, 1) 0%, hsla(197.51072961373387, 100%, 45.68627450980392%, 0) 100%), radial-gradient(at 57.67360306468431% 99.51406103271295%, hsla(180, 71.2%, 50.98039215686274%, 1) 0%, hsla(180, 71.2%, 50.98039215686274%, 0) 100%), radial-gradient(at 90.33167933886477% 80.7813082747135%, hsla(218.7640449438202, 71.2%, 50.98039215686274%, 1) 0%, hsla(218.7640449438202, 71.2%, 50.98039215686274%, 0) 100%), radial-gradient(at 47.49289596594919% 36.32674864364325%, hsla(211.27659574468083, 74.01574803149606%, 49.80392156862745%, 1) 0%, hsla(211.27659574468083, 74.01574803149606%, 49.80392156862745%, 0) 100%);
             display: flex;
             flex-direction: column;
@@ -19,11 +19,16 @@
             height: 100vh;
         }
         .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             max-width: 400px;
-            background: white;
+            height: 60vh;
+            background: #ecf0f1;
+            margin: 50px auto;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
         }
         h2 {
             font-size: 24px;
@@ -31,6 +36,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: bold;
+            padding-bottom: 10px;
+            margin: 30px 0;
         }
         input, textarea {
             width: 90%;
@@ -92,11 +99,11 @@
             font-size: 16px;
         }
         .footer {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             padding: 5px;
             font-size: 12px;
             font-weight: bold;
-            color: #7f8c8d;
+            color: #ecf0f1;
         }
         .container-telefone{
             display: flex;
@@ -107,6 +114,7 @@
 <body>
 
     <div class="container">
+        <div>
         <h2>Limpador de Link Loggi</h2>
         
         <label for="inputLink">📋 Cole o link do erro da  loggi aqui:</label>
@@ -139,6 +147,7 @@
             <p><strong>📌 Número:</strong> <span id="numero"></span></p>
             <p><strong>💬 Mensagem:</strong> <span id="mensagem"></span></p>
             <button id="btnWhatsApp" onclick="abrirWhatsApp()">Abrir no WhatsApp <img src="./img/whatsapp.png" width="20"> </button>
+        </div>
         </div>
     </div>
 
