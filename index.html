@@ -109,6 +109,22 @@
             display: flex;
             
         }
+        #link {
+            width: 100%;
+            overflow: hidden;     /* impede que o conteúdo "vaze" da div */
+            word-wrap: break-word; /* quebra a palavra se necessário */
+            margin-top: 10px;
+            font-size: 14px;
+            color: #2980b9;
+        }
+        #link a {
+            color: #2980b9;
+            text-decoration: none;
+            word-break: break-all;
+        }
+        #link a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -146,6 +162,9 @@
         <div class="info" id="resultado" style="display: none;">
             <p><strong>📌 Número:</strong> <span id="numero"></span></p>
             <p><strong>💬 Mensagem:</strong> <span id="mensagem"></span></p>
+            <div id="link">
+
+            </div>
             <button id="btnWhatsApp" onclick="abrirWhatsApp()">Abrir no WhatsApp <img src="./img/whatsapp.png" width="20"> </button>
         </div>
         </div>
@@ -167,6 +186,7 @@
                 
                 document.getElementById("resultado").style.display = "block";
                 document.getElementById("btnWhatsApp").setAttribute("data-url", `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`);
+                document.getElementById("link").innerHTML = `<p>Link:</p><a href="https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}" target="_blank">https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}</a>`;
                 console.log(`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`);
             }
         }
@@ -187,7 +207,9 @@
             
             document.getElementById("resultado").style.display = "block";
             document.getElementById("btnWhatsApp").setAttribute("data-url", `https://wa.me/${numeroCompleto}?text=${encodeURIComponent(mensagem)}`);
-            console.log(`https://wa.me/${numeroCompleto}?text=${encodeURIComponent(mensagem)}`);
+            
+            document.getElementById("link").innerHTML = `<p>Link:</p><a href="https://wa.me/${numeroCompleto}?text=${encodeURIComponent(mensagem)}" target="_blank">https://wa.me/${numeroCompleto}?text=${encodeURIComponent(mensagem)}</a>`;
+        console.log(`https://wa.me/${numeroCompleto}?text=${encodeURIComponent(mensagem)}`);
         }
 
         function abrirWhatsApp() {
