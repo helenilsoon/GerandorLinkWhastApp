@@ -121,7 +121,7 @@
         <input type="text" id="inputLink" placeholder="Cole o link do WhatsApp">
         <button onclick="gerarLink();">🔗 Gerar Link</button>
         <button class="btn-limpar" onclick="limparCampos()">🧹 Limpar</button>
-
+               
         <h2>Gerar Link WhatsApp </h2>
         <label for="numeroTelefone">📞 Número de telefone:</label>
         <div class="container-telefone">
@@ -167,6 +167,7 @@
                 
                 document.getElementById("resultado").style.display = "block";
                 document.getElementById("btnWhatsApp").setAttribute("data-url", `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`);
+                console.log(`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`);
             }
         }
 
@@ -186,13 +187,15 @@
             
             document.getElementById("resultado").style.display = "block";
             document.getElementById("btnWhatsApp").setAttribute("data-url", `https://wa.me/${numeroCompleto}?text=${encodeURIComponent(mensagem)}`);
+            console.log(`https://wa.me/${numeroCompleto}?text=${encodeURIComponent(mensagem)}`);
         }
 
         function abrirWhatsApp() {
             let url = document.getElementById("btnWhatsApp").getAttribute("data-url");
             if (url) {
-                window.open(url, "_blank");
+                window.location.href=url;
             }
+            
         }
 
         function limparCampos() {
