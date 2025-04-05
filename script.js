@@ -35,7 +35,7 @@ function gerarLinkManual() {
     }
     
     let numeroCompleto = codigoPais + numero;
-    document.getElementById("numero").innerText = numeroCompleto;
+    document.getElementById("numero").innerHTML =  `<a href="https://wa.me/${numeroCompleto}">${numeroCompleto}</a>`;
     document.getElementById("mensagem").innerText = mensagem ? mensagem : "(Sem mensagem)";
     if(numeroError && numeroError.style.display === "block") {
         numeroError.style.display = "none";
