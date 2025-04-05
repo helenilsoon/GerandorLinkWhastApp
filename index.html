@@ -5,138 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
     <title>Limpador de Link Loggi e gerador de link whatsapp</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-image: radial-gradient(at 50.8042864113279% 97.15369660885034%, hsla(218.7640449438202, 71.2%, 50.98039215686274%, 1) 0%, hsla(218.7640449438202, 71.2%, 50.98039215686274%, 0) 100%), radial-gradient(at 34.29194778719072% 83.76767611730027%, hsla(211.27659574468083, 74.01574803149606%, 49.80392156862745%, 1) 0%, hsla(211.27659574468083, 74.01574803149606%, 49.80392156862745%, 0) 100%), radial-gradient(at 93.53546606213474% 94.30892732021933%, hsla(197.51072961373387, 100%, 45.68627450980392%, 1) 0%, hsla(197.51072961373387, 100%, 45.68627450980392%, 0) 100%), radial-gradient(at 57.67360306468431% 99.51406103271295%, hsla(180, 71.2%, 50.98039215686274%, 1) 0%, hsla(180, 71.2%, 50.98039215686274%, 0) 100%), radial-gradient(at 90.33167933886477% 80.7813082747135%, hsla(218.7640449438202, 71.2%, 50.98039215686274%, 1) 0%, hsla(218.7640449438202, 71.2%, 50.98039215686274%, 0) 100%), radial-gradient(at 47.49289596594919% 36.32674864364325%, hsla(211.27659574468083, 74.01574803149606%, 49.80392156862745%, 1) 0%, hsla(211.27659574468083, 74.01574803149606%, 49.80392156862745%, 0) 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            max-width: 400px;
-           
-            background: #ecf0f1;
-          
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-        }
-        h2 {
-            font-size: 24px;
-            background-image: radial-gradient(at 21.90789391471415% 70.44319641447126%, hsla(203.04635761589404, 85.31073446327683%, 34.70588235294118%, 1) 0%, hsla(203.04635761589404, 85.31073446327683%, 34.70588235294118%, 0) 100%), radial-gradient(at 16.500641188764508% 3.8231408051255467%, hsla(217.67441860465118, 100%, 33.72549019607843%, 1) 0%, hsla(217.67441860465118, 100%, 33.72549019607843%, 0) 100%), radial-gradient(at 74.34852567990674% 75.54196561649323%, hsla(245.6934306569343, 71.72774869109949%, 37.450980392156865%, 1) 0%, hsla(245.6934306569343, 71.72774869109949%, 37.450980392156865%, 0) 100%), radial-gradient(at 99.63779818219587% 38.22291228943251%, hsla(262.64900662251654, 85.31073446327683%, 34.70588235294118%, 1) 0%, hsla(262.64900662251654, 85.31073446327683%, 34.70588235294118%, 0) 100%), radial-gradient(at 17.005092672210232% 96.56227838441474%, hsla(203.04635761589404, 85.31073446327683%, 34.70588235294118%, 1) 0%, hsla(203.04635761589404, 85.31073446327683%, 34.70588235294118%, 0) 100%), radial-gradient(at 52.25463664355099% 21.648213240051938%, hsla(217.67441860465118, 100%, 33.72549019607843%, 1) 0%, hsla(217.67441860465118, 100%, 33.72549019607843%, 0) 100%), radial-gradient(at 67.49924106711507% 41.602379840997095%, hsla(245.6934306569343, 71.72774869109949%, 37.450980392156865%, 1) 0%, hsla(245.6934306569343, 71.72774869109949%, 37.450980392156865%, 0) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: bold;
-            padding-bottom: 10px;
-            margin: 30px 0;
-        }
-        input, textarea {
-            width: 90%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 2px solid #bdc3c7;
-            border-radius: 5px;
-            font-size: 16px;
-            background: #f7f9f9;
-        } 
-        select {
-            width: 20%;
-            padding: 10px ;
-            margin: 10px 5px;
-            border: 2px solid #bdc3c7;
-            border-radius: 5px;
-            font-size: 16px;
-            background: #f7f9f9;
-        }
-        input:focus, textarea:focus, select:focus {
-            outline: none;
-            border-color: #2980b9;
-        }
-
-        input[name="telefone"] {
-            width: 70%;
-        }
-        button {
-            width: 40%;
-            padding: 12px;
-            margin-top: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            color: white;
-            background-image: radial-gradient(at 35.8790264972795% 88.55527514505249%, hsla(106.25, 75.78947368421053%, 37.254901960784316%, 1) 0%, hsla(106.25, 75.78947368421053%, 37.254901960784316%, 0) 100%), radial-gradient(at 39.681294635120565% 51.50518111905178%, hsla(126.87022900763357, 64.53201970443348%, 39.80392156862745%, 1) 0%, hsla(126.87022900763357, 64.53201970443348%, 39.80392156862745%, 0) 100%), radial-gradient(at 95.8040665410661% 94.45966173631962%, hsla(152.50000000000003, 100%, 32.94117647058823%, 1) 0%, hsla(152.50000000000003, 100%, 32.94117647058823%, 0) 100%), radial-gradient(at 86.21608363715242% 60.76420643162723%, hsla(165.83333333333334, 75.78947368421053%, 37.254901960784316%, 1) 0%, hsla(165.83333333333334, 75.78947368421053%, 37.254901960784316%, 0) 100%), radial-gradient(at 93.28336636002264% 63.71042007309271%, hsla(106.25, 75.78947368421053%, 37.254901960784316%, 1) 0%, hsla(106.25, 75.78947368421053%, 37.254901960784316%, 0) 100%), radial-gradient(at 2.564286472819055% 52.02101875431963%, hsla(126.87022900763357, 64.53201970443348%, 39.80392156862745%, 1) 0%, hsla(126.87022900763357, 64.53201970443348%, 39.80392156862745%, 0) 100%), radial-gradient(at 89.06255116916685% 44.38450195319129%, hsla(152.50000000000003, 100%, 32.94117647058823%, 1) 0%, hsla(152.50000000000003, 100%, 32.94117647058823%, 0) 100%), radial-gradient(at 23.685808198124725% 58.77660937579983%, hsla(165.83333333333334, 75.78947368421053%, 37.254901960784316%, 1) 0%, hsla(165.83333333333334, 75.78947368421053%, 37.254901960784316%, 0) 100%), radial-gradient(at 10.733903472193196% 82.30517395492086%, hsla(106.25, 75.78947368421053%, 37.254901960784316%, 1) 0%, hsla(106.25, 75.78947368421053%, 37.254901960784316%, 0) 100%), radial-gradient(at 86.65089335565177% 67.1134684002484%, hsla(126.87022900763357, 64.53201970443348%, 39.80392156862745%, 1) 0%, hsla(126.87022900763357, 64.53201970443348%, 39.80392156862745%, 0) 100%), radial-gradient(at 15.198630853724183% 7.355724216888648%, hsla(152.50000000000003, 100%, 32.94117647058823%, 1) 0%, hsla(152.50000000000003, 100%, 32.94117647058823%, 0) 100%);
-            transition: background 0.3s;
-        }
-        button:hover {
-            background-image: radial-gradient(at 38.71346911055051% 92.20759875921344%, hsla(120, 84.04907975460122%, 68.03921568627452%, 1) 0%, hsla(120, 84.04907975460122%, 68.03921568627452%, 0) 100%), radial-gradient(at 93.26421510322868% 98.07371266524966%, hsla(146.76258992805754, 85.27607361963189%, 68.03921568627452%, 1) 0%, hsla(146.76258992805754, 85.27607361963189%, 68.03921568627452%, 0) 100%), radial-gradient(at 64.61661961479743% 96.49220944690823%, hsla(120, 84.04907975460122%, 68.03921568627452%, 1) 0%, hsla(120, 84.04907975460122%, 68.03921568627452%, 0) 100%), radial-gradient(at 65.61699318744819% 83.61911234265268%, hsla(146.76258992805754, 85.27607361963189%, 68.03921568627452%, 1) 0%, hsla(146.76258992805754, 85.27607361963189%, 68.03921568627452%, 0) 100%), radial-gradient(at 27.154374027688256% 39.241657898212544%, hsla(120, 84.04907975460122%, 68.03921568627452%, 1) 0%, hsla(120, 84.04907975460122%, 68.03921568627452%, 0) 100%), radial-gradient(at 11.912180884719259% 10.711645973478756%, hsla(146.76258992805754, 85.27607361963189%, 68.03921568627452%, 1) 0%, hsla(146.76258992805754, 85.27607361963189%, 68.03921568627452%, 0) 100%), radial-gradient(at 32.54185466396681% 94.929434260352%, hsla(120, 84.04907975460122%, 68.03921568627452%, 1) 0%, hsla(120, 84.04907975460122%, 68.03921568627452%, 0) 100%), radial-gradient(at 60.553427090395616% 40.25441551765401%, hsla(146.76258992805754, 85.27607361963189%, 68.03921568627452%, 1) 0%, hsla(146.76258992805754, 85.27607361963189%, 68.03921568627452%, 0) 100%), radial-gradient(at 21.082515427484815% 41.79229882041916%, hsla(120, 84.04907975460122%, 68.03921568627452%, 1) 0%, hsla(120, 84.04907975460122%, 68.03921568627452%, 0) 100%), radial-gradient(at 99.08892252448376% 76.62019673608015%, hsla(146.76258992805754, 85.27607361963189%, 68.03921568627452%, 1) 0%, hsla(146.76258992805754, 85.27607361963189%, 68.03921568627452%, 0) 100%);
-        }
-        .btn-limpar {
-            background-image: radial-gradient(at 14.940741377293264% 87.15030167668732%, hsla(37.54189944134078, 94.7089947089947%, 37.05882352941177%, 1) 0%, hsla(37.54189944134078, 94.7089947089947%, 37.05882352941177%, 0) 100%), radial-gradient(at 87.6750647772647% 1.3385121913617737%, hsla(355.2317880794702, 61.63265306122449%, 51.9607843137255%, 1) 0%, hsla(355.2317880794702, 61.63265306122449%, 51.9607843137255%, 0) 100%), radial-gradient(at 49.070669344920326% 78.27738818382576%, hsla(316.056338028169, 68.93203883495146%, 40.3921568627451%, 1) 0%, hsla(316.056338028169, 68.93203883495146%, 40.3921568627451%, 0) 100%), radial-gradient(at 74.45234262134115% 74.98653249525917%, hsla(217.87709497206703, 94.7089947089947%, 37.05882352941177%, 1) 0%, hsla(217.87709497206703, 94.7089947089947%, 37.05882352941177%, 0) 100%), radial-gradient(at 70.02804984844894% 53.14241591372082%, hsla(37.54189944134078, 94.7089947089947%, 37.05882352941177%, 1) 0%, hsla(37.54189944134078, 94.7089947089947%, 37.05882352941177%, 0) 100%), radial-gradient(at 8.20632703886286% 27.88241439415655%, hsla(355.2317880794702, 61.63265306122449%, 51.9607843137255%, 1) 0%, hsla(355.2317880794702, 61.63265306122449%, 51.9607843137255%, 0) 100%), radial-gradient(at 75.9997185601206% 73.8098559873784%, hsla(316.056338028169, 68.93203883495146%, 40.3921568627451%, 1) 0%, hsla(316.056338028169, 68.93203883495146%, 40.3921568627451%, 0) 100%), radial-gradient(at 25.701198192159346% 50.84678213559318%, hsla(217.87709497206703, 94.7089947089947%, 37.05882352941177%, 1) 0%, hsla(217.87709497206703, 94.7089947089947%, 37.05882352941177%, 0) 100%), radial-gradient(at 32.37211695374342% 41.0056426423287%, hsla(37.54189944134078, 94.7089947089947%, 37.05882352941177%, 1) 0%, hsla(37.54189944134078, 94.7089947089947%, 37.05882352941177%, 0) 100%), radial-gradient(at 53.20960059996137% 75.0871344707294%, hsla(355.2317880794702, 61.63265306122449%, 51.9607843137255%, 1) 0%, hsla(355.2317880794702, 61.63265306122449%, 51.9607843137255%, 0) 100%);
-        }
-        .btn-limpar:hover {
-            background: #c0392b;
-        }
-        #btnWhatsApp {
-          width: 100%;
-        }
-        .info {
-            text-align: left;
-            margin-top: 20px;
-            background: #ecf0f1;
-            padding: 15px;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        .footer {
-            margin-bottom: 15px;
-            padding: 5px;
-            font-size: 12px;
-            font-weight: bold;
-            color: #ecf0f1;
-        }
-        .container-telefone{
-            display: flex;
-            
-        }
-        #link {
-            width: 100%;
-            overflow: hidden;     /* impede que o conteúdo "vaze" da div */
-            word-wrap: break-word; /* quebra a palavra se necessário */
-            margin-top: 10px;
-            font-size: 14px;
-            color: #2980b9;
-        }
-        #link a {
-            color: #2980b9;
-            text-decoration: none;
-            word-break: break-all;
-        }
-        #link a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
         <div>
-        <h2>Limpador de Link Loggi</h2>
+        <!-- <h2>Limpador de Link Loggi</h2>
         
         <label for="inputLink">📋 Cole o link do erro da  loggi aqui:</label>
         <input type="text" id="inputLink" placeholder="Cole o link do WhatsApp">
         <button onclick="gerarLink();">🔗 Gerar Link</button>
-        <button class="btn-limpar" onclick="limparCampos()">🧹 Limpar</button>
+        <button class="btn-limpar" onclick="limparCampos()">🧹 Limpar</button> -->
                
         <h2>Gerar Link WhatsApp </h2>
         <label for="numeroTelefone">📞 Número de telefone:</label>
@@ -170,63 +50,9 @@
         </div>
     </div>
 
-    <div class="footer">Versão: 1.4.6</div>
+    <div class="footer">Versão: 1.5.7</div>
 
-    <script>
-        function gerarLink() {
-            let input = document.getElementById("inputLink").value;
-            
-            let match = input.match(/phone=%2B(\d+)&text=([^&]*)/);
-            if (match) {
-                let numero = match[1];
-                let mensagem = decodeURIComponent(match[2]);
-
-                document.getElementById("numero").innerText = numero;
-                document.getElementById("mensagem").innerText = mensagem;
-                
-                document.getElementById("resultado").style.display = "block";
-                document.getElementById("btnWhatsApp").setAttribute("data-url", `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`);
-                document.getElementById("link").innerHTML = `<p>Link:</p><a href="https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}" target="_blank">https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}</a>`;
-                console.log(`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`);
-            }
-        }
-
-        function gerarLinkManual() {
-            let codigoPais = document.getElementById("pais").value;
-            let numero = document.getElementById("numeroTelefone").value.replace(/\D/g, '');
-            let mensagem = document.getElementById("mensagemOpcional").value;
-            
-            if (!numero || numero.length < 10) {
-                alert("Por favor, insira um número de telefone válido.");
-                return;
-            }
-            
-            let numeroCompleto = codigoPais + numero;
-            document.getElementById("numero").innerText = numeroCompleto;
-            document.getElementById("mensagem").innerText = mensagem ? mensagem : "(Sem mensagem)";
-            
-            document.getElementById("resultado").style.display = "block";
-            document.getElementById("btnWhatsApp").setAttribute("data-url", `https://wa.me/${numeroCompleto}?text=${encodeURIComponent(mensagem)}`);
-            
-            document.getElementById("link").innerHTML = `<p>Link:</p><a href="https://wa.me/${numeroCompleto}?text=${encodeURIComponent(mensagem)}" target="_blank">https://wa.me/${numeroCompleto}?text=${encodeURIComponent(mensagem)}</a>`;
-        console.log(`https://wa.me/${numeroCompleto}?text=${encodeURIComponent(mensagem)}`);
-        }
-
-        function abrirWhatsApp() {
-            let url = document.getElementById("btnWhatsApp").getAttribute("data-url");
-            if (url) {
-                window.location.href=url;
-            }
-            
-        }
-
-        function limparCampos() {
-            document.getElementById("inputLink").value = "";
-            document.getElementById("numeroTelefone").value = "";
-            document.getElementById("mensagemOpcional").value = "";
-            document.getElementById("resultado").style.display = "none";
-        }
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
